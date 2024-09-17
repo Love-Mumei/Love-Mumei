@@ -18,14 +18,14 @@ import seaborn as sns
   * Contains female students only from Mindanao with an average score equal to or greater than 55 (Mindy).
 # Approach:
 * What I did first is to load the dataset for me to manipulate:
-## Code:
+## Code to load the dataset:
 ```
 import pandas as pd
 Initial_Data = pd.read_csv('board.csv')
 Initial_Data #Load the Table
 ```
 * Now that I have successfully loaded the dataset, I will now display the second task, which is to display the Name and grades in GEAS and Electronics with the condition that Electronics needs to have a grade greater than 70 and track is constant as Instrumentation and hometown Luzon.
-## Code:
+## Code to add the conditions for the task:
 ```
 Instru = Initial_Data.loc[(Initial_Data['Track'] == 'Instrumentation') & #To filter out the Track that only outputs "Instrumentation" as a constant
     (Initial_Data['Electronics'] > 70) &  #To filter out the grades got in Electronics to only output grades greater than 70
