@@ -5,6 +5,11 @@
 * Pandas - to manipulate the data
 * matplotlib.pyplot - For the graphs
 * seaborn - For advanced visualization
+```
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+```
 
 # Tasks:
 * Load the given dataset
@@ -60,7 +65,21 @@ Mindy
 - Visualize how features such as track, gender, and hometown contribute to the average score in a plot.
 
 # Approach:
+* For this approach, I used the box plot to compare the Average of each track to the Gender of the students and the Hometown to the Average.
+* to add colors to the graph, I used the code hue = 'variable'
+## Code for comparing the track average to the gender:
+```
+#Use boxplot as the visualization to compare the average, track and gender of the data
+sns.boxplot(x ='Track', y ='Average', hue ='Gender', data = Initial_Data)
+plt.show()
+```
 
+## Code for comparing the average to the hometown:
+```
+plt.figure(figsize=(10, 6))
+sns.boxplot(x ='Hometown', y ='Average', hue = 'Hometown', data = Initial_Data) #Create a graph that compares the average by Hometown
+plt.show()
+```
 # Learnings
 - I learned how to efficiently wrangle data using pandas by applying the conditions and filtering the needed data
 - I also used how to visualize relationships of the given data
