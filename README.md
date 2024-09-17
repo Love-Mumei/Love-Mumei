@@ -81,5 +81,5 @@ sns.boxplot(x ='Hometown', y ='Average', hue = 'Hometown', data = Initial_Data) 
 plt.show()
 ```
 # Learnings
-- I learned how to efficiently wrangle data using pandas by applying the conditions and filtering the needed data
-- I also used how to visualize relationships of the given data
+- I learned how to wrangle data using pandas apply the conditions and filter the data that is needed for the task
+- I also learn how to visualize relationships of the given data
