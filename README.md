@@ -11,7 +11,7 @@
 * Construct two data frames, which are: Instru and Mindy
   * Contains student from Luzon with Instrumentation track and a score greater than 70 in Electronics (Instru).
   * Contains female students only from Mindanao with an average score equal to or greater than 55 (Mindy).
-## Approach:
+# Approach:
 
 # Problem 2:
 - Visualize how features such as track, gender, and hometown contribute to the average score in a plot.
