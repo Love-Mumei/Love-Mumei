@@ -15,7 +15,46 @@
 * What I did first is to load the dataset for me to manipulate:
 ## Code:
 ```
-
+import pandas as pd
+Initial_Data = pd.read_csv('board.csv')
+Initial_Data #Load the Table
+```
+* Now that I have successfully loaded the dataset, I will now display the second task, which is to display the Name and grades in GEAS and Electronics with the condition that Electronics needs to have a grade greater than 70 and track is constant as Instrumentation and hometown Luzon.
+## Code:
+```
+Instru = Initial_Data.loc[(Initial_Data['Track'] == 'Instrumentation') & #To filter out the Track that only outputs "Instrumentation" as a constant
+    (Initial_Data['Electronics'] > 70) &  #To filter out the grades got in Electronics to only output grades greater than 70
+    (Initial_Data['Hometown'] == 'Luzon'), #To make the constant only have Luzon in the output
+    ['Name', 'GEAS', 'Electronics', 'Hometown', 'Track']].reset_index(drop=True) #To only display the 'Name', grades in GEAS and Electronics and 
+#Hometown
+Instru #print the output
+```
+*For the third task I was a bit more careful than the second one since I need to add another Column which is the average grade of each student without using excel.
+## Code to find the Average of each student
+```
+Initial_Data['Average'] = Initial_Data[['Math', 'Electronics', 'GEAS', 'Communication']].mean(axis=1) #Make a new column that calculates the Average
+Initial_Data
+```
+* After adding the Average to the column I started to filter out the Hometown of the students and then filter out the gender.
+## Code for the Hometown Filter:
+```
+Step1 = Initial_Data.loc[(Initial_Data['Hometown'] == 'Mindanao')] 
+Step1 #Segment of the code for confirmation
+```
+## Code for the Gender Filter:
+```
+step2 = Initial_Data.loc[(Initial_Data['Hometown'] == 'Mindanao') & (Initial_Data['Gender'] == 'Female')]
+step2 #Segment of the code for confirmation
+```
+* After ensuring that the Average is correct in the segment code I combined all of them and added the condition of the average should be greater than or equal to 55
+## Code:
+```
+indy = Initial_Data.loc[(Initial_Data['Hometown'] == 'Mindanao') & #Filter the Hometown to only Mondanao
+        (Initial_Data['Gender'] == 'Female') & #Filter out the gender
+        (Initial_Data['Average'] >= 55), #Filter out the average less than 55
+        ['Name', 'Track', 'Electronics', 'Average'] #output these specific variables
+        ].reset_index(drop=True) #resets the index of the table
+Mindy
 ```
 # Problem 2:
 - Visualize how features such as track, gender, and hometown contribute to the average score in a plot.
